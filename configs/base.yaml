@@ -1,0 +1,19 @@
+project:
+  name: ternary-gtf
+  output_root: artifacts/runs
+
+reproducibility:
+  seed: 42
+  deterministic: true
+
+model:
+  max_timesteps: 32
+  spike_alphabet: ternary
+  decoder_update: orthogonal
+  ridge: 0.001
+  sparsity_penalty: 0.0
+  shrinkage: 1.0
+
+logging:
+  save_every: 1
+  log_level: INFO

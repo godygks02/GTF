@@ -1,0 +1,40 @@
+project:
+  name: ternary-gtf
+  output_root: artifacts/runs
+
+reproducibility:
+  seed: 42
+  deterministic: true
+
+experiment:
+  name: synthetic-sine
+  task: regression
+
+data:
+  dataset: sine
+  train_size: 512
+  validation_size: 256
+  test_size: 256
+  noise_std: 0.1
+
+features:
+  kind: random_linear
+  num_features: 128
+
+model:
+  max_timesteps: 32
+  spike_alphabet: ternary
+  decoder_update: orthogonal
+  ridge: 0.001
+  sparsity_penalty: 0.0
+  shrinkage: 1.0
+
+evaluation:
+  metrics:
+    - mse
+    - residual_norm
+    - spike_count
+
+logging:
+  save_every: 1
+  log_level: INFO

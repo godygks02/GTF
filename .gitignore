@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments and notebooks
+.venv/
+.uv-cache/
+.ipynb_checkpoints/
+notebooks/**
+!notebooks/README.md
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local data (directory README files remain tracked)
+data/raw/**
+!data/raw/README.md
+data/interim/**
+!data/interim/README.md
+data/processed/**
+!data/processed/README.md
+data/external/**
+!data/external/README.md
+
+# Generated experiment artifacts
+artifacts/runs/**
+!artifacts/runs/README.md
+artifacts/checkpoints/**
+!artifacts/checkpoints/README.md
+artifacts/plots/**
+!artifacts/plots/README.md
+artifacts/tables/**
+!artifacts/tables/README.md
+artifacts/logs/**
+!artifacts/logs/README.md
+
+# Local exploratory analysis exports
+analysis/**
+!analysis/README.md
+
+# Local environment files
+.env
+.env.*
+!.env.example
