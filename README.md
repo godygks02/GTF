@@ -59,3 +59,14 @@ GTF/
 - [연구 로드맵](docs/ROADMAP.md)
 - [재현성 및 실험 규약](docs/EXPERIMENT_PROTOCOL.md)
 - [기존 상세 연구 계획](ternary-gtf-research-plan.md)
+
+## 첫 baseline 실행
+
+PyTorch 의존성을 설치한 뒤 two-moons에서 binary/ternary SG-BPTT 비교를 실행한다.
+
+```powershell
+uv sync --extra dev --extra snn
+uv run python experiments/compare_two_moons_snn.py
+```
+
+결과는 `artifacts/runs/`, checkpoint는 `artifacts/checkpoints/`, 비교 그림은 `artifacts/plots/`에 생성되며 Git에는 포함되지 않는다.
