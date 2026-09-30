@@ -48,3 +48,14 @@ def test_binary_and_ternary_gtf_emit_expected_alphabets() -> None:
 
     assert set(binary._spike(membrane, 1.0)) <= {0.0, 1.0}
     assert set(ternary._spike(membrane, 1.0)) <= {-1.0, 0.0, 1.0}
+
+
+def test_gtf_accepts_a_pretrained_encoder() -> None:
+    model = GTFClassifier(input_features=2, hidden_features=3)
+    weight = np.arange(6, dtype=np.float64).reshape(2, 3)
+    bias = np.asarray([-1.0, 0.0, 1.0])
+
+    model.set_encoder(weight, bias)
+
+    assert np.array_equal(model.encoder_weight, weight)
+    assert np.array_equal(model.encoder_bias, bias)

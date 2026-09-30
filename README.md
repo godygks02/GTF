@@ -78,3 +78,9 @@ uv run python experiments/compare_two_moons_gtf_vs_bptt.py
 ```
 
 이 첫 GTF는 고정 random membrane encoder를 사용하며, binary/ternary spike basis를 functional cross-entropy residual에 순차 fitting한다.
+
+Encoder 전략 비교는 fixed random, SG-BPTT pretrained, GTF projection-pool selection을 함께 실행한다.
+
+```powershell
+uv run python experiments/compare_gtf_encoder_strategies.py
+```

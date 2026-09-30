@@ -123,6 +123,27 @@ class GTFClassifier:
         self.coefficients = np.empty((0, num_classes), dtype=np.float64)
         self.history: list[dict[str, float | int]] = []
 
+    def set_encoder(self, weight: np.ndarray, bias: np.ndarray) -> None:
+        """Replace the fixed membrane projection before fitting.
+
+        ``weight`` follows NumPy's ``features @ weight`` convention and therefore
+        has shape ``[input_features, hidden_features]``.
+        """
+        expected_weight_shape = (self.input_features, self.hidden_features)
+        expected_bias_shape = (self.hidden_features,)
+        if weight.shape != expected_weight_shape:
+            raise ValueError(
+                f"encoder weight must have shape {expected_weight_shape}, got {weight.shape}"
+            )
+        if bias.shape != expected_bias_shape:
+            raise ValueError(
+                f"encoder bias must have shape {expected_bias_shape}, got {bias.shape}"
+            )
+        if self.selected_neurons.size:
+            raise RuntimeError("encoder cannot be replaced after GTF bases have been selected")
+        self.encoder_weight = np.asarray(weight, dtype=np.float64).copy()
+        self.encoder_bias = np.asarray(bias, dtype=np.float64).copy()
+
     def _membrane(self, features: np.ndarray) -> np.ndarray:
         return features.astype(np.float64) @ self.encoder_weight + self.encoder_bias
 

@@ -1,0 +1,53 @@
+project:
+  run_root: artifacts/runs
+  checkpoint_root: artifacts/checkpoints
+  plot_root: artifacts/plots
+
+reproducibility:
+  seed: 42
+  deterministic: true
+
+runtime:
+  device: auto
+
+data:
+  num_samples: 2000
+  noise: 0.20
+  validation_fraction: 0.15
+  test_fraction: 0.20
+
+bptt_model:
+  input_features: 2
+  hidden_features: 64
+  num_classes: 2
+  timesteps: 16
+  beta: 0.90
+  threshold: 1.0
+  surrogate_slope: 5.0
+
+bptt_training:
+  epochs: 100
+  batch_size: 128
+  learning_rate: 0.001
+  weight_decay: 0.0001
+
+gtf_common:
+  input_features: 2
+  num_classes: 2
+  max_stages: 32
+  ridge: 0.001
+  sparsity_penalty: 0.0
+  shrinkage: 1.0
+  line_search_steps: 8
+  minimum_improvement: 1.0e-8
+
+encoder_strategies:
+  fixed_random:
+    hidden_features: 64
+    thresholds_per_feature: 32
+  bptt_pretrained:
+    hidden_features: 64
+    thresholds_per_feature: 32
+  gtf_projection_pool:
+    hidden_features: 256
+    thresholds_per_feature: 16

@@ -13,3 +13,5 @@
 `two_moons_sg_bptt.yaml`은 binary/ternary SNN의 공정한 SG-BPTT 비교 설정이다.
 
 `two_moons_gtf_vs_bptt.yaml`은 두 SG-BPTT baseline과 fixed-encoder binary/ternary GTF를 함께 비교한다.
+
+`two_moons_gtf_encoder_strategies.yaml`은 fixed, BPTT-pretrained, GTF projection-pool encoder 전략을 비교한다.
