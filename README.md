@@ -70,3 +70,11 @@ uv run python experiments/compare_two_moons_snn.py
 ```
 
 결과는 `artifacts/runs/`, checkpoint는 `artifacts/checkpoints/`, 비교 그림은 `artifacts/plots/`에 생성되며 Git에는 포함되지 않는다.
+
+GTF까지 포함한 4-way 비교는 다음과 같이 실행한다.
+
+```powershell
+uv run python experiments/compare_two_moons_gtf_vs_bptt.py
+```
+
+이 첫 GTF는 고정 random membrane encoder를 사용하며, binary/ternary spike basis를 functional cross-entropy residual에 순차 fitting한다.

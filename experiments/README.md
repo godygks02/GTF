@@ -19,3 +19,13 @@ uv run python experiments/compare_two_moons_snn.py
 ```
 
 빠른 동작 확인은 `--epochs 3 --run-name smoke-test`처럼 실행한다.
+
+## GTF 대 SG-BPTT
+
+Binary/ternary SG-BPTT와 binary/ternary fixed-encoder GTF를 같은 split에서 비교한다.
+
+```powershell
+uv run python experiments/compare_two_moons_gtf_vs_bptt.py
+```
+
+빠른 검증에는 `--bptt-epochs 3 --gtf-stages 5 --run-name smoke-gtf`를 사용한다.

@@ -11,3 +11,5 @@
 - config 변경으로 의미가 달라지면 기존 파일을 덮지 말고 새 파일을 만든다.
 
 `two_moons_sg_bptt.yaml`은 binary/ternary SNN의 공정한 SG-BPTT 비교 설정이다.
+
+`two_moons_gtf_vs_bptt.yaml`은 두 SG-BPTT baseline과 fixed-encoder binary/ternary GTF를 함께 비교한다.
