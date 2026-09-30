@@ -31,3 +31,5 @@ uv run python experiments/compare_two_moons_gtf_vs_bptt.py
 빠른 검증에는 `--bptt-epochs 3 --gtf-stages 5 --run-name smoke-gtf`를 사용한다.
 
 `compare_gtf_encoder_strategies.py`는 fixed random encoder, BPTT-pretrained frozen encoder, 큰 random projection pool에서의 GTF encoder basis selection을 비교한다. 마지막 방식은 projection weight의 연속 최적화가 아니라 gradient-free discrete selection이다.
+
+`compare_temporal_gtf_vs_bptt.py`는 실제 recurrent membrane state와 signed soft reset을 갖는 binary/ternary Temporal GTF를 16-step SG-BPTT와 비교한다.

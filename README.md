@@ -84,3 +84,9 @@ Encoder 전략 비교는 fixed random, SG-BPTT pretrained, GTF projection-pool s
 ```powershell
 uv run python experiments/compare_gtf_encoder_strategies.py
 ```
+
+실제 recurrent membrane과 signed soft reset을 사용하는 Temporal GTF 비교는 다음과 같이 실행한다.
+
+```powershell
+uv run python experiments/compare_temporal_gtf_vs_bptt.py
+```

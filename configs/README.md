@@ -15,3 +15,5 @@
 `two_moons_gtf_vs_bptt.yaml`은 두 SG-BPTT baseline과 fixed-encoder binary/ternary GTF를 함께 비교한다.
 
 `two_moons_gtf_encoder_strategies.yaml`은 fixed, BPTT-pretrained, GTF projection-pool encoder 전략을 비교한다.
+
+`two_moons_temporal_gtf.yaml`은 동일한 물리적 timestep 제한에서 recurrent Temporal GTF와 SG-BPTT를 비교한다.
